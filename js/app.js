@@ -45,10 +45,8 @@ $(document).ready(function(){
     function submitGuess() {
       var userGuess = parseInt($("#userGuess").val());
       if (isNaN(userGuess)) {
-        $("#userGuess").val("");
         $("#feedback").html("That is not a number");
       } else {
-        $("#userGuess").val("");
         $("#feedback").html(guessFeedback(userGuess));
         addCount = +$("#count").html() + 1;
         $("#count").html(addCount);
@@ -57,6 +55,7 @@ $(document).ready(function(){
           $("input").prop("disabled", true);
         }
       }
+      $("#userGuess").val("");
     }
 
   }
